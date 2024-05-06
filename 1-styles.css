@@ -1,0 +1,41 @@
+a {
+	text-decoration: none;
+	color: #A7213D;
+}
+
+/* Underline styles */
+a {
+
+	position: relative;
+	padding: 0.2em 0;
+  }
+
+  /* Fade in */
+  a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background-color: #A7213D;
+	opacity: 0;
+	transition: opacity 300ms, transform 300ms;
+  }
+
+  /* Slide in */
+  a {
+	overflow: hidden;
+  }
+
+  a::after {
+	opacity: 1;
+	transform: scaleX(0);
+	transform-origin: left;
+  }
+
+  a:hover::after,
+  a:focus::after{
+	transform: scaleX(1);
+  }
+
